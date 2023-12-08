@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { FC, ReactNode } from 'react'
+import { Navbar } from '../ui';
+
 interface Props {
     title: string;
     pageDescription: string;
@@ -12,6 +14,7 @@ const ShoptLayout: FC<Props> = ({ children, title, pageDescription, imageFulUrl 
             <Head>
                 <title>{title}</title>
                 <meta name='description' content={pageDescription} />
+                <meta name='og:title' content={title} />
 
                 {imageFulUrl && (
                     <meta name='og:image' content={imageFulUrl} />
@@ -19,7 +22,7 @@ const ShoptLayout: FC<Props> = ({ children, title, pageDescription, imageFulUrl 
             </Head>
 
             <nav>
-
+                <Navbar />
             </nav>
 
             <main style={{
